@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-family: "Afacad", "Afacad Placeholder", sans-serif;
+  --font-family-numbers: "Poppins", "Poppins Placeholder", sans-serif;
+  --font-family-shopinfo: "Montserrat", "Montserrat Placeholder", sans-serif;
+  --font-family-button: Inter-Medium, Inter, "Inter Placeholder", sans-serif;
+
+  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
+
+  --color-bg: #042c54;
+
+  --color-prime: #4170e8;
+  --color-white: #f2f2f2;
+
+  --color-footer: #031b34;
+  --color-text: #81afdd;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-white);
+  text-align: center;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: lightblue;
+  outline: 1px solid slategrey;
+}
+
+a {
+  // NOTE: links default!: color:black, without underline
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border;
+  scroll-behavior: smooth;
+  // padding: 0;
+  margin: 0;
+}
+
+/* BACKGROUND SETTINGS:APP-> gradient/gradient__bg... világos színátmenetet lehet, hogy visszahelyezem, ha túl sötét lesz így */
+.gradient__bg {
+  background: -moz-radial-gradient(
+    circle at 3% 25%,
+    rgb(255, 234, 163) 0%,
+    rgb(72, 158, 230) 25%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 3% 25%,
+    rgb(255, 234, 163) 0%,
+    rgb(72, 158, 230) 25%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 3% 25%,
+    rgb(255, 234, 163) 0%,
+    rgb(72, 158, 230) 25%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 3% 25%,
+    rgb(255, 234, 163) 0%,
+    rgb(72, 158, 230) 25%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 3% 25%,
+    rgb(255, 234, 163) 0%,
+    rgb(72, 158, 230) 25%
+  );
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+.rotate-45 {
+  @apply rotate-[45deg];
+}
+
+.rotate-90 {
+  @apply rotate-[90deg];
+}
+
+.rotate-135 {
+  @apply rotate-[135deg];
+}
+
+.rotate-180 {
+  @apply rotate-[180deg];
+}
+
+.rotate-225 {
+  @apply rotate-[225deg];
+}
+
+.rotate-270 {
+  @apply rotate-[270deg];
+}
+
+.rotate-315 {
+  @apply rotate-[315deg];
+}
+
+.rotate-360 {
+  @apply rotate-[360deg];
+}
+
+.-rotate-45 {
+  @apply rotate-[-45deg];
+}
+
+.-rotate-90 {
+  @apply rotate-[-90deg];
+}
+
+.-rotate-135 {
+  @apply rotate-[-135deg];
+}
+
+.-rotate-180 {
+  @apply rotate-[-180deg];
+}
+
+.-rotate-225 {
+  @apply rotate-[-225deg];
+}
+
+.-rotate-270 {
+  @apply rotate-[-270deg];
+}
+
+.-rotate-315 {
+  @apply rotate-[-315deg];
+}
+
+.-rotate-360 {
+  @apply rotate-[-360deg];
+}

@@ -1,0 +1,50 @@
+{
+  "name": "weather-app",
+  "private": true,
+  "version": "1.0.1",
+  "type": "module",
+  "scripts": {
+    "v": "vite",
+    "dev": "code . & start http://localhost:5173 & vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
+    "axios": "^1.3.1",
+    "moment": "^2.30.1",
+    "react": "^18.2.0",
+    "react-alice-carousel": "^2.9.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "react-icons-kit": "^2.0.0",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.2",
+    "react-select-async-paginate": "^0.7.5",
+    "react-spinners": "^0.13.8",
+    "react-spinners-kit": "^1.9.1",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "sass": "^1.71.1",
+    "scroll-lock": "^2.1.5",
+    "styled-components": "^6.1.9"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.1.0",
+    "vite-plugin-svgr": "^4.2.0"
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
+}
