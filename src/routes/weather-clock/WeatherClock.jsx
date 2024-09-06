@@ -18,7 +18,7 @@ import { sunset } from "react-icons-kit/feather/sunset";
 import { thermometer } from "react-icons-kit/feather/thermometer";
 import { SphereSpinner } from "react-spinners-kit";
 
-import "./WeatherClock.styles.css";
+import { WeatherContainer } from "./WeatherClock.styles";
 
 function WeatherCurrent() {
   const headerTitle = "Page 3: WeatherClock";
@@ -37,7 +37,6 @@ function WeatherCurrent() {
   }, [allLoadings]);
 
   // city state
-  // const [city, setCity] = useState(null);
   const cityItems = useSelector(selectCityItems);
 
   // unit state
@@ -86,7 +85,7 @@ function WeatherCurrent() {
   };
 
   return (
-    <>
+    <WeatherContainer>
       <BreadcrumbNav headerTitle={headerTitle} />
       <div className="background">
         <div className="box">
@@ -159,7 +158,7 @@ function WeatherCurrent() {
                                     {citySearchData?.data.sys.sunrise &&
                                       moment
                                         .unix(citySearchData.data.sys.sunrise)
-                                        .format("HH:MM")}
+                                        .format("HH:mm")}
                                   </span>
                                 </div>
                               </div>
@@ -178,7 +177,7 @@ function WeatherCurrent() {
                                     {citySearchData?.data.sys.sunset &&
                                       moment
                                         .unix(citySearchData.data.sys.sunset)
-                                        .format("HH:MM")}
+                                        .format("HH:mm")}
                                   </span>
                                 </div>
                               </div>
@@ -196,7 +195,7 @@ function WeatherCurrent() {
           </div>
         </div>
       </div>
-    </>
+    </WeatherContainer>
   );
 }
 

@@ -50,6 +50,18 @@ a {
   margin: 0;
 }
 
+.box .current-weather-details-box {
+  width: 100%;
+  min-height: 60dvh;
+
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  border-radius: 4px;
+  padding: 15px;
+}
+
 /* BACKGROUND SETTINGS:APP-> gradient/gradient__bg... világos színátmenetet lehet, hogy visszahelyezem, ha túl sötét lesz így */
 .gradient__bg {
   background: -moz-radial-gradient(
