@@ -36,6 +36,7 @@ const SearchBar = () => {
     );
 
     Promise.all([currentWeatherFetch])
+    Promise.all([currentWeatherFetch])
       .then(async (response) => {
         const weatherResponse = await response[0].json();
 
@@ -82,6 +83,7 @@ const SearchBar = () => {
     setSearch(searchData);
     handleOnSearchChange(searchData);
   };
+  // dispatch saved cities' name and ID
   // dispatch saved cities' name and ID
   const dispatch = useDispatch();
   const addCityToSlice = () => {
