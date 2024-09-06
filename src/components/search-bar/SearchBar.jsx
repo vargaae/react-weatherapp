@@ -48,7 +48,7 @@ const SearchBar = () => {
   // Get City Slice for filtering
   const savedCities = useSelector(selectCityItems);
   // Extract all IDs and assign them to excludeSavedCityIds
-  const excludeSavedCityNames = savedCities.map((city) => city.name);
+  const excludeSavedCityIds = savedCities.map((city) => city.id);
 
   const loadOptions = (inputValue) => {
     return fetch(
@@ -64,7 +64,7 @@ const SearchBar = () => {
           .slice()
           .filter(
             (city) =>
-              !excludeSavedCityNames.includes(city.name) &&
+              !excludeSavedCityIds.includes(city.id) &&
               !excludedDuplicatedCityIds.includes(city.id)
           );
 

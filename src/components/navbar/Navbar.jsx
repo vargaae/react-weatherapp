@@ -1,12 +1,14 @@
 import { useNavigate, Link, useLocation } from "react-router-dom";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { selectCityItems } from "../../store/city/city.selector";
+import { addItemToSlice } from "../../store/city/city.reducer";
+import { useDispatch, useSelector } from "react-redux";
 
 import { navigation } from "../../constants";
 
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
-
-import { useDispatch, useSelector } from "react-redux";
 
 import { GradientButtonComponent } from "../../components";
 import { HamburgerMenu } from "./NavbarDesign";
@@ -16,9 +18,25 @@ import { logo } from "../../assets";
 import { NavigationContainer, LogoContainer } from "./Navbar.styles";
 
 const Navbar = ({ navGradient }) => {
-  const dispatch = useDispatch();
-
   const navigateTo = useNavigate();
+
+  const dispatch = useDispatch();
+  const cityItems = useSelector(selectCityItems);
+
+  useEffect(() => {
+    const addCityToSlice = () => {
+      dispatch(
+        addItemToSlice({
+          name: "Budapest",
+          id: 3850494,
+        })
+      );
+    };
+
+    if (cityItems.name === undefined) {
+      addCityToSlice();
+    }
+  }, []);
 
   const goHome = () => {
     navigateTo("/");
