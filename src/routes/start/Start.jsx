@@ -34,7 +34,7 @@ const Start = () => {
       );
     };
 
-    if (cityItems.name == undefined) {
+    if (cityItems.name === undefined) {
       addCityToSlice();
     }
   }, []);
