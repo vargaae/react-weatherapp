@@ -14,13 +14,9 @@ const CitySearch = () => {
   const headerTitle = "Page 2: City Search";
 
   // redux state
-  const {
-    citySearchLoading,
-    citySearchData,
-    forecastLoading,
-    forecastData,
-    forecastError,
-  } = useSelector((state) => state.weather);
+  const { citySearchLoading, forecastLoading } = useSelector(
+    (state) => state.weather
+  );
 
   // main loadings state
   const [loadings, setLoadings] = useState(true);
@@ -38,12 +34,6 @@ const CitySearch = () => {
 
   // unit state
   const [unit, setUnit] = useState("metric"); // metric = C and imperial = F
-
-  // toggle unit
-  const toggleUnit = () => {
-    setLoadings(true);
-    setUnit(unit === "metric" ? "imperial" : "metric");
-  };
 
   // dispatch
   const dispatch = useDispatch();
@@ -72,13 +62,6 @@ const CitySearch = () => {
   useEffect(() => {
     fetchData();
   }, [unit]);
-
-  // handle city search
-  const handleCitySearch = (e) => {
-    e.preventDefault();
-    setLoadings(true);
-    fetchData();
-  };
 
   return (
     <>

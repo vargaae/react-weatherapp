@@ -27,7 +27,6 @@ const SearchBar = () => {
   const [search, setSearch] = useState(null);
 
   const [currentWeather, setCurrentWeather] = useState(null);
-  const [forecast, setForecast] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
@@ -35,17 +34,12 @@ const SearchBar = () => {
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
-    const forecastFetch = fetch(
-      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
-    );
 
-    Promise.all([currentWeatherFetch, forecastFetch])
+    Promise.all([currentWeatherFetch])
       .then(async (response) => {
         const weatherResponse = await response[0].json();
-        const forcastResponse = await response[1].json();
 
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
-        setForecast({ city: searchData.label, ...forcastResponse });
       })
       .catch(console.log);
   };
@@ -63,7 +57,7 @@ const SearchBar = () => {
       .then((response) => response.json())
       .then((response) => {
         // List of city IDs to exclude
-        const excludedDuplicatedCityIds = [3850494, 11111111111111111111];
+        // const excludedDuplicatedCityIds = [3850494, 11111111111111111111];
         // Filter out cities whose id is in the excluded list
         const filteredCities = response.data
           .slice()
@@ -88,7 +82,7 @@ const SearchBar = () => {
     setSearch(searchData);
     handleOnSearchChange(searchData);
   };
-// dispatch saved cities' name and ID
+  // dispatch saved cities' name and ID
   const dispatch = useDispatch();
   const addCityToSlice = () => {
     dispatch(
