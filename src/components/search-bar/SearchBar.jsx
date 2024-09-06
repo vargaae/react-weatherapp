@@ -48,7 +48,7 @@ const SearchBar = () => {
   // Get City Slice for filtering
   const savedCities = useSelector(selectCityItems);
   // Extract all IDs and assign them to excludeSavedCityIds
-  const excludeSavedCityIds = savedCities.map((city) => city.id);
+  const excludeSavedCityNames = savedCities.map((city) => city.name);
 
   const loadOptions = (inputValue) => {
     return fetch(
@@ -64,7 +64,7 @@ const SearchBar = () => {
           .slice()
           .filter(
             (city) =>
-              !excludeSavedCityIds.includes(city.id) &&
+              !excludeSavedCityNames.includes(city.name) &&
               !excludedDuplicatedCityIds.includes(city.id)
           );
 
@@ -89,8 +89,8 @@ const SearchBar = () => {
   const addCityToSlice = () => {
     dispatch(
       addItemToSlice({
-        name: currentWeather?.city,
-        id: currentWeather?.id,
+        name: currentWeather.city,
+        id: currentWeather.id,
       })
     );
     navigateTo("/selector");
