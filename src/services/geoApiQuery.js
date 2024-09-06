@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const geoApiHeaders = {
-  "X-RapidAPI-Key": import.meta.env.VITE_APP_GEOAPI_TOKEN, // enter your rapid api key here
+  "X-RapidAPI-Key": import.meta.env.VITE_APP_GEOAPI_TOKEN,
   "X-RapidAPI-Host": import.meta.env.VITE_APP_GEOAPI_API_URL,
 };
 

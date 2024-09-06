@@ -17,7 +17,6 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import logger from "redux-logger";
 
 import { rootReducer } from "./root-reducer";
-// import { geoApi } from "../services/geoApi";
 
 const middleWares = [
   import.meta.env.NODE_ENV === "development" && logger,
@@ -27,13 +26,11 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
-  // blacklist: [geoApi.reducerPath],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  // [geoApi.reducerPath]: geoApi.reducer,
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -41,7 +38,6 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(middleWares),
-  // }).concat(geoApi.middleware, middleWares),
 });
 
 export let persistor = persistStore(store);

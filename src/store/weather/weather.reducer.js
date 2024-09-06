@@ -3,7 +3,7 @@ import axios from "axios";
 
 const baseUrl = import.meta.env.VITE_APP_OPENWEATHER_API_URL;
 const appId = import.meta.env.VITE_APP_OPENWEATHER_API_TOKEN;
-// get city data
+
 export const getCityData = createAsyncThunk("city", async (obj) => {
   try {
     const request = await axios.get(
@@ -22,7 +22,6 @@ export const getCityData = createAsyncThunk("city", async (obj) => {
   }
 });
 
-// get 5 days forecast of the provided city
 export const get5DaysForecast = createAsyncThunk("5days", async (obj) => {
   const request = await axios.get(
     `${baseUrl}/data/2.5/forecast?lat=${obj.lat}&lon=${obj.lon}&units=${obj.unit}&APPID=${appId}`

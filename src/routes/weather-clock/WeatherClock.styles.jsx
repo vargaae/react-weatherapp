@@ -114,7 +114,6 @@ export const WeatherContainer = styled.div`
   color: var(--color-prime);
 }
 
-/* metrices children */
 .metrices {
   text-align: left;
 }

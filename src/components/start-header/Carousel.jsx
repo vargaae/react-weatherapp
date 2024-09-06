@@ -12,9 +12,6 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 import { CarouselContainer, CarouselItem } from "./Carousel.styles";
 
-const demoImage =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlt94EjayRbU_oim_ZJzHHODBNDhCDQzaUIw&usqp=CAU";
-
 const Carousel = () => {
   const responsive = {
     0: { items: 3 },
@@ -24,13 +21,9 @@ const Carousel = () => {
   };
 
   // redux state
-  const {
-    citySearchLoading,
-    citySearchData,
-    forecastLoading,
-    forecastData,
-    forecastError,
-  } = useSelector((state) => state.weather);
+  const { citySearchLoading, forecastLoading, forecastData } = useSelector(
+    (state) => state.weather
+  );
 
   // main loadings state
   const [loadings, setLoadings] = useState(true);
@@ -43,16 +36,9 @@ const Carousel = () => {
   }, [allLoadings]);
 
   // city state
-  const [city, setCity] = useState("Karachi");
+  const [city, setCity] = useState("Budapest");
 
-  // unit state
   const [unit, setUnit] = useState("metric"); // metric = C and imperial = F
-
-  // toggle unit
-  const toggleUnit = () => {
-    setLoadings(true);
-    setUnit(unit === "metric" ? "imperial" : "metric");
-  };
 
   // dispatch
   const dispatch = useDispatch();

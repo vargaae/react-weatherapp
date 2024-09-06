@@ -13,20 +13,15 @@
 ## Bene Studio-React Weather App Assesment
 
 <div align="center">
-  <img alt="Application image" src="https://vargaae.hu/images/projects/weather-app.png" width="700" />
+  <img alt="Application image" src="https://vargaae.hu/images/projects/weather-app-git.png" width="700" />
 </div>
 React Weather App replaces a weather station, the user can search for cities with an autocomplete field to check the current weather, temprature, sunrise and sunset. User can save the cities and it stores the last saved city, so it stays after refreshing the app.
 You can check out the deployed application [here](https://react-weatherapp-bstudio.onrender.com)
 ->deployed on Render
 
-## 🛠 Features/Structure:
-
-- 🚀React APP -> Redux for State Management + Redux-Persist for Persistance,
-
-- 🚀Styled components
-
 ## 🛠 Front End:
 
+- 🚀React APP -> Redux for State Management + Redux-Persist for Persistance,
 - React 18.2
 - Redux (+Redux Toolkit, Redux-Persist)
 - SASS
@@ -49,7 +44,6 @@ Currently, two official plugins are available:
 
 you can grab GEO DB Cities Subscription and API key here: https://rapidapi.com/wirefreethought/api/geodb-cities.
 
-
 You can grab OPENWEATHER API key [here](https://home.openweathermap.org/api_keys)
 , you can grab GEO DB Cities Subscription and API key [here](https://rapidapi.com/wirefreethought/api/geodb-cities/)
 
@@ -61,13 +55,13 @@ Create a new file named `.env` in the root of your project and add the following
 VITE_APP_OPENWEATHER_API_TOKEN=
 VITE_APP_OPENWEATHER_API_URL=https://api.openweathermap.org
 VITE_APP_GEOAPI_TOKEN=
-VITE_APP_GEOAPI_API_URL=
+VITE_APP_GEOAPI_API_URL=wft-geo-db.p.rapidapi.com
 ```
 
 1. **Running the Project**
 
 ```bash
-npm run dev
+npm run preview
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
+Open [http://localhost:4173](http://localhost:4173) in your browser to view the project.

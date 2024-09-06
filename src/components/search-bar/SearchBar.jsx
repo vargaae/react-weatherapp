@@ -50,6 +50,7 @@ const SearchBar = () => {
       .catch(console.log);
   };
 
+  // Get City Slice for filtering
   const savedCities = useSelector(selectCityItems);
   // Extract all IDs and assign them to excludeSavedCityIds
   const excludeSavedCityNames = savedCities.map((city) => city.name);
@@ -62,9 +63,7 @@ const SearchBar = () => {
       .then((response) => response.json())
       .then((response) => {
         // List of city IDs to exclude
-
-        const excludedDuplicatedCityIds = [3850494, 11111111111111111111]; // Replace with actual city IDs to exclude
-
+        const excludedDuplicatedCityIds = [3850494, 11111111111111111111];
         // Filter out cities whose id is in the excluded list
         const filteredCities = response.data
           .slice()
@@ -89,7 +88,7 @@ const SearchBar = () => {
     setSearch(searchData);
     handleOnSearchChange(searchData);
   };
-
+// dispatch saved cities' name and ID
   const dispatch = useDispatch();
   const addCityToSlice = () => {
     dispatch(

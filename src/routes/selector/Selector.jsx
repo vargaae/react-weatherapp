@@ -34,7 +34,6 @@ const Selector = () => {
       <BreadcrumbNav headerTitle={headerTitle} />
       <div className="background">
         <div className="box">
-          {/* current weather details box */}
           <div className="current-weather-details-box">
             <ButtonContainer>
               <ButtonComponent
