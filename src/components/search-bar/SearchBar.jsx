@@ -56,8 +56,8 @@ const SearchBar = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        // List of city IDs to exclude
-        // const excludedDuplicatedCityIds = [3850494, 11111111111111111111];
+        // List of city IDs to exclude : 3850494 - Budapest duplication
+        const excludedDuplicatedCityIds = [9999999999999999999];
         // Filter out cities whose id is in the excluded list
         const filteredCities = response.data
           .slice()
