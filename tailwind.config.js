@@ -40,17 +40,9 @@ export default {
       },
       fontFamily: {
         afracad: ["Afracad", "sans-serif"],
-        // satoshi: ["Satoshi", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
-      // spacing: {
-      //   0.25: "0.0625rem",
-      //   7.5: "1.875rem",
-      //   15: "3.75rem",
-      // },
-      // opacity: {
-      //   15: ".15",
-      // },
       transitionDuration: {
         DEFAULT: "200ms",
       },

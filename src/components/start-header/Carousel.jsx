@@ -114,10 +114,6 @@ const Carousel = () => {
           alt="icon"
         />
         <h5>{data.weather[0].description}</h5>
-        <h5 className="min-max-temp">
-          {Math.round(data.main.temp_max)}°C / {Math.round(data.main.temp_min)}
-          °C
-        </h5>
       </CarouselItem>
     );
   });

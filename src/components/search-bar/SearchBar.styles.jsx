@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SearchFormContainer = styled.div`
   // background-color: #142332;
-  color: lightblue;
+  color: #142332;
   text-align: left;
 
   input {

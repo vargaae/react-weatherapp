@@ -1,11 +1,10 @@
 {
   "name": "weather-app",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.2.0-a.1",
   "type": "module",
   "scripts": {
-    "v": "vite",
-    "dev": "code . & start http://localhost:5173 & vite",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -17,9 +16,7 @@
     "react": "^18.2.0",
     "react-alice-carousel": "^2.9.1",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.2.1",
     "react-icons-kit": "^2.0.0",
-    "react-lazy-load-image-component": "^1.6.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.2",
     "react-select-async-paginate": "^0.7.5",

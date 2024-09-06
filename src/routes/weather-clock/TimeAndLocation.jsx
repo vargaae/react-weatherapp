@@ -17,8 +17,8 @@ function TimeAndLocation() {
 
   return (
     <div>
-      <p className="text-blue-400 text-4xl">{hour && hour}</p>
-      <p className="text-blue-400 text-4xl">{minute && minute}</p>
+      <p className="text-blue-400 text-4xl font-poppins">{hour && hour}</p>
+      <p className="text-blue-400 text-4xl font-poppins">{minute && minute}</p>
     </div>
   );
 }

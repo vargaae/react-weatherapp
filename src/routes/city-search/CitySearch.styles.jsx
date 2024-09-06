@@ -6,6 +6,6 @@ export const SearchContainer = styled.div`
 
   input,
   textarea {
-    background-color: blue;
+    background-color: var(--color-bg);
   }
 `;

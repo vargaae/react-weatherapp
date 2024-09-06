@@ -1,14 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const geoApiOptions = {
-  method: "GET",
-  params: { limit: "8" },
-  headers: {
-    "X-RapidAPI-Key": "b2ae199e59mshee595fde5f388c8p1533bfjsn2065483af9bf", // enter your rapid api key here
-    "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
-  },
-};
-
 const geoApiHeaders = {
   "X-RapidAPI-Key": import.meta.env.VITE_APP_GEOAPI_TOKEN, // enter your rapid api key here
   "X-RapidAPI-Host": import.meta.env.VITE_APP_GEOAPI_API_URL,
@@ -22,10 +13,13 @@ export const geoApi = createApi({
   reducerPath: "geoApi",
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
-    getProducts: builder.query({
-      query: () => createRequest(`/products?populate=*`),
+    getCities: builder.query({
+      query: (inputValue) =>
+        createRequest(
+          `/cities?minPopulation=1000000&namePrefix=${inputValue}&limit=8`
+        ),
     }),
   }),
 });
 
-export const { useGetProductsQuery } = geoApi;
+export const { useGetCitiesQuery } = geoApi;

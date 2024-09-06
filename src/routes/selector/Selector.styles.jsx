@@ -16,11 +16,11 @@ export const ButtonContainer = styled.div`
   margin-top: 3.5rem;
   display: flex;
   justify-content: center;
-  color: rgb(35, 124, 184);
+  color: var(--color-bg);
 `;
 
 export const PlusButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  color: rgb(35, 124, 184);
+  color: var(--color-bg);
 `;

@@ -1,5 +1,5 @@
 /* google fonts */
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 /* general css */
 * {
@@ -12,13 +12,9 @@
 
 /* background */
 .background {
-  /* background: linear-gradient(to bottom, #2fa5ed, #b5d3f9, #ebeefb);
-  background-attachment: fixed;
-  background-size: cover; */
   background-position: center;
   background-color: #ebeefb;
   width: 100%;
-  /* height: 100dvh; */
   padding: 15px;
 }
 
@@ -48,12 +44,12 @@
 }
 
 .background .box::-webkit-scrollbar-thumb {
-  background-color: #2fa5ed;
+  background-color: var(--color-text);
   border-radius: 4px;
 }
 
 .background .box::-webkit-scrollbar-thumb:hover {
-  background-color: #2fa5ed;
+  background-color: var(--color-text);
 }
 
 .background .box::-webkit-scrollbar-track {
@@ -81,7 +77,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #2fa5ed;
+  color: var(--color-text);
 }
 
 .box form .city-input {
@@ -99,7 +95,7 @@
   border: none;
   outline: none;
   background-color: #fff;
-  color: #2fa5ed;
+  color: var(--color-text);
   width: 75px;
   cursor: pointer;
 }
@@ -112,7 +108,7 @@
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  background-color: #142332;
+  background-color: var(--color-bg);
   border-radius: 4px;
   padding: 15px;
 }
@@ -181,7 +177,7 @@
 }
 
 .icon-and-temp h1 {
-  color: #2fa5ed;
+  color: var(--color-text);
   font-size: 56px;
 }
 
@@ -216,7 +212,7 @@
 }
 
 .key .value {
-  color: #2fa5ed;
+  color: var(--color-text);
 }
 
 .key span {
@@ -225,7 +221,7 @@
 }
 
 .value span {
-  color: #2fa5ed;
+  color: var(--color-text);
 }
 
 .forecast-box .min-max-temp {

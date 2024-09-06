@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { addItemToSlice } from "../../store/city/city.reducer";
+import { selectCityItems } from "../../store/city/city.selector";
+
 import { useNavigate } from "react-router-dom";
 
 import { AsyncPaginate } from "react-select-async-paginate";
@@ -14,8 +19,6 @@ import ButtonComponent, {
   BUTTON_TYPE_CLASSES,
 } from "../button-component/ButtonComponent";
 
-import { addItemToSlice } from "../../store/city/city.reducer";
-import { useDispatch } from "react-redux";
 import { ButtonContainer, SearchFormContainer } from "./SearchBar.styles";
 
 const SearchBar = () => {
@@ -47,18 +50,35 @@ const SearchBar = () => {
       .catch(console.log);
   };
 
+  const savedCities = useSelector(selectCityItems);
+  // Extract all IDs and assign them to excludeSavedCityIds
+  const excludeSavedCityNames = savedCities.map((city) => city.name);
+
   const loadOptions = (inputValue) => {
     return fetch(
-      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}&limit=8`,
       geoApiOptions
     )
       .then((response) => response.json())
       .then((response) => {
+        // List of city IDs to exclude
+
+        const excludedDuplicatedCityIds = [3850494, 11111111111111111111]; // Replace with actual city IDs to exclude
+
+        // Filter out cities whose id is in the excluded list
+        const filteredCities = response.data
+          .slice()
+          .filter(
+            (city) =>
+              !excludeSavedCityNames.includes(city.name) &&
+              !excludedDuplicatedCityIds.includes(city.id)
+          );
+
         return {
-          options: response.data.map((city) => {
+          options: filteredCities.map((city) => {
             return {
               value: `${city.latitude} ${city.longitude}`,
-              label: `${city.name}, ${city.countryCode}`,
+              label: `${city.name}`,
             };
           }),
         };
@@ -84,11 +104,11 @@ const SearchBar = () => {
   return (
     <SearchFormContainer>
       <AsyncPaginate
-        placeholder="Search for city"
         debounceTimeout={600}
+        loadOptions={loadOptions}
+        placeholder="Search for city"
         value={search}
         onChange={handleOnChange}
-        loadOptions={loadOptions}
       />
       {currentWeather && (
         <ButtonContainer>

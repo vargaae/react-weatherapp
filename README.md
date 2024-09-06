@@ -16,7 +16,7 @@
   <img alt="Application image" src="https://vargaae.hu/images/projects/weather-app.png" width="700" />
 </div>
 React Weather App replaces a weather station, the user can search for cities with an autocomplete field to check the current weather, temprature, sunrise and sunset. User can save the cities and it stores the last saved city, so it stays after refreshing the app.
-You can check out the deployed application [here](https://multi-micro-store-24.onrender.com)
+You can check out the deployed application [here](https://react-weatherapp-bstudio.onrender.com)
 ->deployed on Render
 
 ## 🛠 Features/Structure:

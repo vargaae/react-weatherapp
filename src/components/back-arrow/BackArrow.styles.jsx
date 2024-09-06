@@ -11,7 +11,7 @@ export const BackArrowContainer = styled.div`
   font-style: normal;
   letter-spacing: -1px;
 
-  padding-top: 0.5rem;
+  padding-top: 0.1rem;
   padding-bottom: 1rem;
 `;
 
