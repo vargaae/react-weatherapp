@@ -5,7 +5,7 @@ export { images };
 export const navigation = [
   {
     id: "0",
-    title: "Bene Studio - React Weather App Assesment",
+    title: "Bene Studio - React Weather App Assessment",
     url: "/",
     onlyMobile: false,
   },
