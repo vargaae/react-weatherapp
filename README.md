@@ -10,7 +10,7 @@
 
 # WEATHER APP
 
-## Bene Studio-React Weather App Assesment
+## React Weather App
 
 <div align="center">
   <img alt="Application image" src="https://vargaae.hu/images/projects/weather-app-git.png" width="700" />
